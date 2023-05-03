@@ -1,0 +1,15 @@
+<script>
+  var lesserafim = ["사쿠라", "김채원", "카즈하", "허윤진", "홍은채"];
+
+  while (lesserafim.length > 0) {
+    var member = prompt("삭제할 멤버 이름을 적어주세요.");
+
+    if (lesserafim.includes(member)) {
+      lesserafim.splice(lesserafim.indexOf(member), 1);
+    } else {
+      alert(`${member} 는 잘못된 이름이빈다.`);
+      member = prompt("다시 입력하세요.");
+    }
+  }
+  alert("모두 삭제되었습니다!");
+</script>
