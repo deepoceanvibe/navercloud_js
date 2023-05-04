@@ -1,0 +1,25 @@
+<script>
+  var height = Number(prompt("키를 입력해주세요"));
+  var weight = Number(prompt("몸무게를 입력해주세요"));
+
+  function CalcBMI(height, weight) {
+    var kg = weight;
+    var cm = height / 100;
+    var bmi = kg / (cm * height);
+
+    if (bmi >= 25.0) {
+      console.log("당신은 과체중입니다.");
+    } else if (bmi <= 18.5) {
+      console.log("당신은 저체중입니다.");
+    } else {
+      console.log("당신은 정상체중입니다.");
+    }
+
+    return bmi;
+  }
+
+  CalcBMI(cm, kg);
+  console.log(
+    `키 -> ${height}cm, 체중 -> ${weight}kg 의 체질량지수는: ${bmi}입니다.`
+  );
+</script>
