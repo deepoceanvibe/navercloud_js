@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      span {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="greet">Hello<span>World!</span></div>
+
+    <script>
+      const $greet = document.getElementById("greet");
+      console.log($greet.textContent); // 브라우저상에 보일 문자만 가져옴
+      console.log($greet.innerHTML); // 내부에 작성된 모든 요소(태그 포함해서) 가져옴
+
+      // $greet.textContent = "안녕<span>하세요</span>"; -> 태그 인식 안됨
+      $greet.innerHTML = "안녕<span>하세요</span>";
+
+      // 모든 자식 태그 삭제
+      // $greet.innerHTML = "";
+
+      // 자식 태그를 간단하게 추가하고 싶은 경우 innerHTML += '추가태그'
+      $greet.innerHTML += "<h1><span>반갑습니다</span></h1>";
+    </script>
+  </body>
+</html>

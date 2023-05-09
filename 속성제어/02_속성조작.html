@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box" id="item" title="안녕하세요"></div>
+
+    <script>
+      const $box = document.querySelector(".box");
+
+      // 속성값 조회하기
+      const hello = $box.getAttribute("title");
+      console.log(hello);
+
+      // 속성값 변경하기
+      $box.setAttribute("id", "lemon");
+
+      // 속성값 추가하기
+      $box.setAttribute("style", "border-radius:50%");
+
+      // 속성값 제거하기
+      $box.removeAttribute("id");
+
+      // 속성값 유무 확인하기
+      let result = $box.hasAttribute("title");
+      console.log(`title 속성 유무? : ${result}`);
+    </script>
+  </body>
+</html>

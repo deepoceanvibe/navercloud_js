@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 class="theTitle">html 조작</h1>
+    <ul id="list">
+      <li class="obj1">list_2</li>
+      <li>list_3</li>
+      <li>list_4</li>
+      <li>list_5</li>
+    </ul>
+    <script>
+      $h1 = document.querySelector(".theTitle");
+      $h1.innerHTML = "<a href='#'>요소 객체 조작</a>";
+      document.querySelector(".obj1").textContent = "리스트_2";
+
+      $list = document.getElementById("list");
+      $newLi = document.createElement("li");
+      $newLi.textContent = "list_6";
+      $list.appendChild($newLi);
+
+      $firstLi = document.createElement("li");
+      $firstLi.textContent = "list_1";
+      const [$secLi, $ThiLi, $ForLi, $FifLi] = $list.children;
+      $list.insertBefore($firstLi, $secLi);
+
+      $list.removeChild($list.firstElementChild);
+    </script>
+  </body>
+</html>

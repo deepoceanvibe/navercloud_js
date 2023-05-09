@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="email" id="account" value="abc@gmail.com" />
+
+    <script>
+      // 조회 구문
+      const $input = document.querySelector("input");
+      console.dir($input);
+      console.log($input.attributes.id.value);
+
+      // 변경하기
+      $input.attributes.id.value = "acc";
+      $input.attributes.value.value = "zzz";
+      $input.attributes.type.value = "checkbox";
+
+      // 추가하기
+    </script>
+  </body>
+</html>
