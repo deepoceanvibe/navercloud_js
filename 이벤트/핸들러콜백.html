@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn">클릭해주세요.</button>
+    <script>
+      function hello() {
+        alert("안녕!");
+      }
+      const $btn = document.getElementById("btn");
+      $btn.addEventListener("click", hello); // 클릭하면 hello함수 실행해라
+
+      function red() {
+        $btn.style.background = "red";
+      }
+      const $btn = document.getElementById("btn");
+      $btn.addEventListener("click", red);
+    </script>
+  </body>
+</html>

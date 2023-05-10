@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      #fruits {
+        display: flex;
+        list-style: none;
+        padding: 20px;
+        border: 2px solid red;
+        flex-wrap: wrap;
+      }
+
+      #fruits li {
+        width: 100px;
+        cursor: pointer;
+        background: orange;
+        margin-right: 10px;
+      }
+
+      .active {
+        color: red;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="fruits">
+      <li id="apple" class="active">Apple</li>
+      <li id="banana">Banana</li>
+      <li id="grape">Grape</li>
+    </ul>
+
+    <div>현재 고른 과일 : <em class="msg">Apple</em></div>
+
+    <label>
+      새로운 과일을 추가해주세요!
+      <input type="text" class="text-box" />
+      <button id="add">추가</button>
+    </label>
+
+    <script>
+      // 부모 태그 ul에 이벤트를 적용해서 밑에 자식들(li)에게도 일괄 적용하기
+      const $fruits = document.querySelector("#fruits");
+
+      // 태그에서 클래스속성 active 제거
+      const removeActive = () => {
+        for ($li of [...$fruits.children]) {
+          if ($li.classList.contains("active")) {
+            $li.classList.remove("active");
+          }
+        }
+      };
+
+      $fruits.onclick = (e) => {
+        // 클릭한 요소가 li가 아니면(ul 클릭했을 때) 이벤트 막음
+        console.log(e.target.matches("#fruits li"));
+        if (!e.target.matches("#fruits li")) {
+          return; // ul이 클릭됐다면 강제로 이벤트 막기
+        }
+      };
+    </script>
+  </body>
+</html>
